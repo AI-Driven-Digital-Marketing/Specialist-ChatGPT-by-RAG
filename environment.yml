@@ -2,7 +2,7 @@ name: TorchEnv
 dependencies:
   - numpy
   - pandas
-  - openai
   - pip:
     - matplotlib
     - pinecone-client
+    - openai
