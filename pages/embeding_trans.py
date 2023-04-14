@@ -6,7 +6,7 @@ from tqdm.auto import tqdm
 import datetime
 from time import sleep
 
-st.write('## ')
+st.write('## 请赖炳辉在此处上传你的transcript文件！！！')
 @st.cache_resource
 def initialize():
     openai.api_key = st.secrets['openai_key']
@@ -57,8 +57,7 @@ with col2:
         batch_size = 100  # how many embeddings we create and insert at once
         progress_text = "Upload in progress. Please wait."
         my_bar = st.progress(0, text=progress_text)
-        #for i in tqdm(range(0, len(transcript_data), batch_size)):
-        for i in tqdm(range(0, 2, batch_size)):
+        for i in tqdm(range(0, len(transcript_data), batch_size)):
             # find end of batch
             i_end = min(len(transcript_data), i+batch_size)
             meta_batch = transcript_data[i:i_end]
@@ -86,7 +85,7 @@ with col2:
             } for x in meta_batch]
             to_upsert = list(zip(ids_batch, embeds, meta_batch))
             # upsert to Pinecone
-            #index.upsert(vectors=to_upsert)
+            index.upsert(vectors=to_upsert)
             my_bar.progress((i+1)/len(transcript_data)*100, text=progress_text)
         st.write('Complete! Do not upload same file')
     
