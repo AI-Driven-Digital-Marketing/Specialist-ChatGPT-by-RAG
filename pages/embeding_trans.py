@@ -46,15 +46,17 @@ with col2:
             indice['text'] = indice['text'].replace("\n", "")
         st.write('#### 确认一下格式对不对，对的话就tm点继续')
         st.write(transcript_data[0])
-        st.write('''example:\n{'text': "  [CLICK] DAVID SONTAG: So welcometo spring 2019 Machine Learning for Healthcare. My name is David Sontag. I'm a professor incomputer science. Also I'm in the Institutefor Medical Engineering and Science. My co-instructor todaywill be Pete Szolovits, who I'll introduce more towardsthe end of today's lecture, along with the restof the course staff. So the problem. The problem is that healthcarein the United States costs too much. Currently, we're spending$3 trillion a year, and we're not even necessarilydoing a very good job. Patients who havechronic disease often find that these chronicdiseases are diagnosed late. They're often not managed well.",
+        st.write('example:\n')
+        st.write({'text': "  [CLICK] DAVID SONTAG: So welcometo spring 2019 Machine Learning for Healthcare. My name is David Sontag. I'm a professor incomputer science. Also I'm in the Institutefor Medical Engineering and Science. My co-instructor todaywill be Pete Szolovits, who I'll introduce more towardsthe end of today's lecture, along with the restof the course staff. So the problem. The problem is that healthcarein the United States costs too much. Currently, we're spending$3 trillion a year, and we're not even necessarilydoing a very good job. Patients who havechronic disease often find that these chronicdiseases are diagnosed late. They're often not managed well.",
                  'id': 'vof7x8r_ZUA_0',
                  'title': '1. What Makes Healthcare Unique?',
                  'MIT OpenCourseWare': 'MIT OpenCourseWare',
-                 '2020-10-22T19:38:19Z': '2020-10-22T19:38:19Z'}''')
+                 '2020-10-22T19:38:19Z': '2020-10-22T19:38:19Z'})
     if submit:
         embed_model = "text-embedding-ada-002"
         batch_size = 100  # how many embeddings we create and insert at once
-
+        progress_text = "Upload in progress. Please wait."
+        my_bar = st.progress(0, text=progress_text)
         #for i in tqdm(range(0, len(transcript_data), batch_size)):
         for i in tqdm(range(0, 2, batch_size)):
             # find end of batch
@@ -85,5 +87,7 @@ with col2:
             to_upsert = list(zip(ids_batch, embeds, meta_batch))
             # upsert to Pinecone
             #index.upsert(vectors=to_upsert)
+            my_bar.progress((i+1)/len(transcript_data)*100, text=progress_text)
+        st.write('Complete! Do not upload same file')
     
     
