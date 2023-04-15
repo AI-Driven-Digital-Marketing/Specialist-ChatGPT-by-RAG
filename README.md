@@ -5,7 +5,7 @@
 
 ## Quick Portral
 ### 
-| **--->** [1.Streamlit App](https://dduan-zw-visual-search-welcome-fztyvt.streamlit.app/) |
+| **--->** [1.Streamlit App](https://ai-driven-digital-marketing-specialist-chatgpt-b-welcome-tyu8wo.streamlit.app/) |
 
 | **--->** [2.Codelab](https://docs.google.com/document/d/1p8RdCUnfBQIfVtpQ8gmEty_1RgeEwW62a6ZI0g2rdaI/edit#heading=h.knzgz5vyduac) |
 ### Tech Stacks
