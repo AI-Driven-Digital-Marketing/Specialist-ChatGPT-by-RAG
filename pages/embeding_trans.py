@@ -86,7 +86,7 @@ with col2:
             to_upsert = list(zip(ids_batch, embeds, meta_batch))
             # upsert to Pinecone
             index.upsert(vectors=to_upsert)
-            my_bar.progress((i+1)/len(transcript_data)*100, text=progress_text)
+            my_bar.progress((i+1)/len(transcript_data), text=progress_text)
         st.write('Complete! Do not upload same file')
     
     
