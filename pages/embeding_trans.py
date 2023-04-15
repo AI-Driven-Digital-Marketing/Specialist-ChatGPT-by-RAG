@@ -6,7 +6,7 @@ from tqdm.auto import tqdm
 import datetime
 from time import sleep
 
-st.write('## 请赖炳辉在此处上传你的transcript文件！！！')
+st.write('## Upload your transcript here！')
 @st.cache_resource
 def initialize():
     openai.api_key = st.secrets['openai_key']
@@ -44,7 +44,7 @@ with col2:
         transcript_data = file_content['HC-ML']
         for indice in transcript_data:
             indice['text'] = indice['text'].replace("\n", "")
-        st.write('#### 确认一下格式对不对，对的话就tm点继续')
+        st.write('#### Check your format')
         st.write(transcript_data[0])
         st.write('example:\n')
         st.write({'text': "  [CLICK] DAVID SONTAG: So welcometo spring 2019 Machine Learning for Healthcare. My name is David Sontag. I'm a professor incomputer science. Also I'm in the Institutefor Medical Engineering and Science. My co-instructor todaywill be Pete Szolovits, who I'll introduce more towardsthe end of today's lecture, along with the restof the course staff. So the problem. The problem is that healthcarein the United States costs too much. Currently, we're spending$3 trillion a year, and we're not even necessarilydoing a very good job. Patients who havechronic disease often find that these chronicdiseases are diagnosed late. They're often not managed well.",
