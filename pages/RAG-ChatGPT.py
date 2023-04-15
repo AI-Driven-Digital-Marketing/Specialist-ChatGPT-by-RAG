@@ -95,6 +95,6 @@ if submit:
     query_with_contexts = retrieve(query)
     # call openai API
     output = complete(query_with_contexts)
-    with st.expander("See contexts Prompt from the RAG"):
+    with st.expander("See contexts prompt from the RAG"):
         st.write(query_with_contexts)
     st.write(output)
