@@ -5,9 +5,9 @@
 
 ## Quick Portral
 ### 
-| **--->** [1.Streamlit App](https://ai-driven-digital-marketing-specialist-chatgpt-b-welcome-tyu8wo.streamlit.app/) |
+| **--->** [1.Streamlit App](https://ai-driven-digital-marketing-specialist-chatgpt-b-welcome-tyu8wo.streamlit.app/embeding_trans) |
 
-| **--->** [2.Codelab](https://docs.google.com/document/d/1p8RdCUnfBQIfVtpQ8gmEty_1RgeEwW62a6ZI0g2rdaI/edit#heading=h.knzgz5vyduac) |
+| **--->** [2.Codelab](https://docs.google.com/document/d/1l6kvP7iiktTklmHS4wRK2tk88Xh0iSaA_fGWslSF5hg/edit#heading=h.7sa4zxkhmsum) |
 ### Tech Stacks
 - Python
 - Streamlit
