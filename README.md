@@ -15,7 +15,7 @@
 - AWS S3
 ## 1.Introduction
 #### What is RAG and how will we use it?
-retrieval enhanced generative(RAG) question-answering system with Pinecone and OpenAI
+Retrieval Augmented Generation(RAG) question-answering system with Pinecone and OpenAI
 ## Dataset Source
 
 ## Architecture
